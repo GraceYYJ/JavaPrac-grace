@@ -8,6 +8,7 @@ public class printOnetoMax {
         char array[]=new char[n+1];
         array[n]='1';
         while(array[0]!=0){
+            //
             //shuchu
 
         }
