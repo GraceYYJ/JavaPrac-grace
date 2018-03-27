@@ -52,7 +52,7 @@ public class theKthNum {
                     swap(data,small,index);
             }
         }
-        small++;
+        small=small+1;
         swap(data,small,end);
         return small;
     }
