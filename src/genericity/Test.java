@@ -1,21 +1,44 @@
 package genericity;
 
 /**
- * Created by GraceYang on 2018/3/8.
+ * Created by Administrator on 2018/3/6.
+ */
+/**
+ * Created by zmt on 2016/12/22.
  */
 public class Test {
-    private static void test(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            try {
-                if (arr[i] % 2 == 0) {
-                    throw new NullPointerException();
-                } else {
-                    System.out.print(i);
-                }
+    public static void main(String [] args){
+        System.out.println(new B().getValue());
+    }
+    static class A{
+        protected int value;
+        public A(int v) {
+            setValue(v);
+        }
+        public void setValue(int value){
+            this.value = value;
+        }
+        public int getValue(){
+            try{
+                value++;
+                return value;
+            } catch(Exception e){
+                System.out.println(e.toString());
             } finally {
-                System.out.print("e");
+                this.setValue(value);
+                System.out.println(value);
             }
+            return value;
         }
     }
-
+    static class B extends A{
+        public B() {
+            super(5);
+            setValue(getValue() - 3);
+        }
+        public void setValue(int value){
+            super.setValue(2 * value);
+        }
+    }
 }
+

@@ -1,6 +1,5 @@
-package OnlineJudge;
+package OnlineJudge.wangyi;
 
-import java.util.IdentityHashMap;
 import java.util.Scanner;
 
 /**
