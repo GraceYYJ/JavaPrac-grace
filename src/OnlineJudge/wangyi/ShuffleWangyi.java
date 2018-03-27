@@ -1,4 +1,4 @@
-package OnlineJudge;
+package OnlineJudge.wangyi;
 
 import java.util.ArrayList;
 import java.util.Iterator;

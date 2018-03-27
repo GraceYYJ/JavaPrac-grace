@@ -77,9 +77,9 @@ public class Permutation38 {
     }
 
     public static void main(String[] args) {
-        String str1="aa";
+        String str1="abc";
         Permutation38 test=new Permutation38();
-        ArrayList<String> lists=test.Permutation1(str1);
+        ArrayList<String> lists=test.Permutation(str1);
         for(int i=0;i<lists.size();i++){
             System.out.println(lists.get(i));
         }

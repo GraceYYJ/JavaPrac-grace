@@ -1,6 +1,4 @@
-package OnlineJudge;
-
-import javafx.util.Pair;
+package OnlineJudge.wangyi;
 
 import java.util.Scanner;
 
