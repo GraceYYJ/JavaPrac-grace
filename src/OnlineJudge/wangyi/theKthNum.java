@@ -40,9 +40,7 @@ public class theKthNum {
         if(data.length<=0||start<0||end<start){
             return -1;
         }
-        //int index=(int)Math.random()*start+(end-start);
         int index=start+(end-start)/2;
-        //System.out.println(index);
         swap(data,index,end);
         int small=start-1;
         for(index=start;index<end;index++){
