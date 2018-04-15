@@ -55,7 +55,7 @@ public class quicksortv1 {
         int array[]=new int[]{7,3,9,8,5,2,1,6};
         test.quicksort2(array,0,7);
         for(int i=0;i<array.length;i++){
-            System.out.print(array[i]);
+            System.out.print(array[i]+" ");
         }
     }
 }

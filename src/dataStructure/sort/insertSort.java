@@ -6,7 +6,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * Created by GraceYang on 2018/1/20.
  */
 public class insertSort {
-    void sort(int A[]){
+    void insertsort(int A[]){
         int i,j,temp;
         int n=A.length;
         for(i=1;i<n;i++){
