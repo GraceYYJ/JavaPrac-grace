@@ -1,4 +1,4 @@
-package interview;
+package interview.others;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -49,9 +49,9 @@ public class propersum {
                     result += array[i];
                 }
                 //如果result==sum
-                if (result == sum) {
-                    return true;
                 }
+            if (result == sum) {
+                return true;
             }
         }
         return false;

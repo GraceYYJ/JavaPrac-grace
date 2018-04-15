@@ -7,6 +7,9 @@ public class quicksortv2 {
     public static void main(String[] args) {
         int array[]={3,5,1,2,7,5,6,8};
         quicksort(array,0,7);
+        for(int i=0;i<array.length;i++){
+            System.out.print(array[i]+" ");
+        }
     }
     public static void quicksort(int data[],int start,int end){
         if(start==end)

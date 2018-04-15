@@ -1,4 +1,4 @@
-package interview;
+package interview.others;
 
 /**
  * Created by Administrator on 2018/4/4.

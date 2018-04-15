@@ -73,7 +73,7 @@ class Storage{
         }
         objectlist.remove();
         System.out.println("消耗了一个商品，现有仓储量为"+objectlist.size());
-        full.signalAll();
+        empty.signalAll();
         lock.unlock();
     }
 }
