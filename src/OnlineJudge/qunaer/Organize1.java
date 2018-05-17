@@ -1,54 +1,63 @@
 package OnlineJudge.qunaer;
-
-/**
- * Created by Administrator on 2018/4/2.
- */
 import java.util.*;
+public class Organize1{
+    public static void main(String[] args){
+        Scanner scan=new Scanner(System.in);
+        String word=scan.nextLine();
+        String[] dicts=scan.nextLine().split(" ");
+        Set<String> wordList=new HashSet<String>();
+        for(String w:dicts){
+            wordList.add(w.toLowerCase());
+        }
+        StringBuffer sb=new StringBuffer(word);
+        String endWord=sb.reverse().toString();
+        System.out.print(ladderLength(word,endWord,wordList));
 
-public class Organize1 {
-    static int[] iArray = {0, 2, 3, 1, 4, 10, 23, 7, 8, 9, 6, 3};
-    static ArrayList<String> list = new ArrayList<String>();
-    static Set<String> index = new TreeSet<String>();
-    static StringBuilder str;
-    static StringBuilder indexStr;
-    static int sum;
+    }
 
-    public static void org(int[] iArray, int start){
-        for(int i=0; i<iArray.length; i++){
-            sum = iArray[i];
-            str = new StringBuilder();
-            str.append(iArray[i]);
-            indexStr = new StringBuilder();
-            indexStr.append(i);
+    public static int ladderLength(String beginWord, String endWord, Set<String> wordList) {
+        Set<String> beginSet = new HashSet<String>(), endSet = new HashSet<String>();
 
-            for(int j=start; j<iArray.length; j++){
-                if(i != j){
-                    sum += iArray[j];
+        int len = 1;
+        int strLen = beginWord.length();
+        HashSet<String> visited = new HashSet<String>();
 
-                    if(sum == 10){
-                        str.append("+"+ iArray[j]);
-                        indexStr.append("+"+ j);
-                        int size = index.size();
-                        index.add(indexStr.toString());
+        beginSet.add(beginWord);
+        endSet.add(endWord);
+        while (!beginSet.isEmpty() && !endSet.isEmpty()) {
+            if (beginSet.size() > endSet.size()) {
+                Set<String> set = beginSet;
+                beginSet = endSet;
+                endSet = set;
+            }
 
-                        if(index.size() > size)
-                            list.add(str.toString());
-                    }
-                    if(sum < 10){
-                        str.append("+"+ iArray[j]);
-                        indexStr.append("+"+ j);
-                    }
-                    if(sum > 10){
-                        sum -= iArray[j];
+            Set<String> temp = new HashSet<String>();
+            for (String word : beginSet) {
+                char[] chs = word.toCharArray();
+
+                for (int i = 0; i < chs.length; i++) {
+                    for (char c = 'a'; c <= 'z'; c++) {
+                        char old = chs[i];
+                        chs[i] = c;
+                        String target = String.valueOf(chs);
+
+                        if (endSet.contains(target)) {
+                            return len + 1;
+                        }
+
+                        if (!visited.contains(target) && wordList.contains(target)) {
+                            temp.add(target);
+                            visited.add(target);
+                        }
+                        chs[i] = old;
                     }
                 }
             }
-        }
-    }
 
-    public static void main(String args[]){
-        for (int i=0; i<iArray.length; i++)
-            org(iArray, i);
-        System.out.println(list.toString());
+            beginSet = temp;
+            len++;
+        }
+
+        return 0;
     }
 }

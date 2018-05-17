@@ -1,9 +1,11 @@
-package interview.linkedlist;
+package jianzhiOffer;
+
+import interview.linkedlist.LinkedList;
 
 /**
  * Created by Administrator on 2018/4/14.
  */
-public class circlelist {
+public class circlelist23 {
     public static LinkedList hascircle(LinkedList head){
         if(head==null||head.next==null)
             return null;

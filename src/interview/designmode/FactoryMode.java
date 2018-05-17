@@ -2,6 +2,7 @@ package interview.designmode;
 
 /**
  * Created by Administrator on 2018/4/11.
+ * 工厂模式，创建式模型，用于根据不同的情况创建不同的对象
  */
 public class FactoryMode {
     public static void main(String[] args) {
@@ -56,7 +57,8 @@ class ShapeFactory{
 }
 /***************工厂方法********************
  * 由于简单工厂每增加一个形状，都要修改工厂的生产代码
- * 所以工厂方法采用多工厂的思想，每个产品对应一个工厂，新增产品就新增工厂***************/
+ * 所以工厂方法采用多工厂的思想，每个产品对应一个工厂，新增产品就新增工厂
+ * ***************/
 interface Car{
     public void run();
 }
