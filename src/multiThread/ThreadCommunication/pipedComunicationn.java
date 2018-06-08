@@ -3,6 +3,8 @@ package multiThread.ThreadCommunication;
 import java.io.IOException;
 import java.io.PipedReader;
 import java.io.PipedWriter;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Created by Administrator on 2018/5/18.
@@ -20,6 +22,8 @@ public class pipedComunicationn {
             out.write(receive);
         }
         out.close();
+        Lock lock=new ReentrantLock();
+
     }
 }
 class Print implements Runnable{
